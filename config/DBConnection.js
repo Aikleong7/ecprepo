@@ -5,7 +5,7 @@ const Booking = require('../models/Booking');
 const BundleDeal = require('../models/BundleDeal');
 const Campaign = require('../models/Campaign');
 const Cart = require('../models/Cart');
-const DiscountPromo = require('../models/DiscountPromo');
+// const DiscountPromo = require('../models/DiscountPromo');
 const Favourite = require('../models/Favourite');
 const LoyaltyVoucher = require('../models/LoyaltyVoucher');
 const Notification = require('../models/Notification');
@@ -34,14 +34,14 @@ const setUpDB = (drop) => {
             Cart.belongsTo(User);
             Cart.belongsTo(Product);
 
-            DiscountPromo.belongsTo(Product);
-            DiscountPromo.hasMany(Product);
+            // DiscountPromo.belongsTo(Product);
+            // DiscountPromo.hasMany(Product);
 
             LoyaltyVoucher.hasMany(UserVoucher, { onDelete: 'CASCADE' });
 
             Product.belongsTo(BundleDeal);
-            Product.belongsTo(DiscountPromo);
-            Product.hasMany(DiscountPromo);
+            // Product.belongsTo(DiscountPromo);
+            // Product.hasMany(DiscountPromo);
             Product.hasMany(Review);
             Product.belongsTo(User);
 
@@ -63,7 +63,7 @@ const setUpDB = (drop) => {
             User.hasMany(LoyaltyVoucher);
             User.hasMany(Booking);
             User.hasMany(BundleDeal);
-            User.hasMany(DiscountPromo);
+            // User.hasMany(DiscountPromo);
             User.hasMany(Notification, { onDelete: 'CASCADE' });
             User.hasMany(Product);
             User.hasMany(MerchVoucher);

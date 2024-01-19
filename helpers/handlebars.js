@@ -8,6 +8,7 @@ const replaceCommas = function (value) {
   return value ? value.replace(/,/g, " | ") : "None";
 };
 
+
 const pricing = function (value) {
   return value.toFixed(2);
 };

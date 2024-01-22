@@ -1,0 +1,290 @@
+{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+    <div class="d-flex flex-grow-1">
+        <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+        <a class="navbar-brand d-none d-lg-inline-block" href="#">
+            BearBearWe
+        </a>
+        <a class="navbar-brand-two mx-auto d-lg-none d-inline-block" href="#">
+            <img src="//via.placeholder.com/40?text=LOGO" alt="logo">
+        </a>
+        <div class="w-100 text-right">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <form class="d-flex justify-content-center">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+        
+        <ul class="navbar-nav ms-auto flex-nowrap">
+            <li class="nav-item">
+                <a href="#" class="nav-link m-2 menu-item nav-active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/merchant/products" class="nav-link m-2 menu-item">Product</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link m-2 menu-item">About Us</a>
+            </li>
+            {{#if user}}
+            <li class="nav-item">
+                <a href="/user/profile" class="nav-link m-2 menu-item btn btn-outline-primary">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a href="/logout" class="nav-link m-2 menu-item btn btn-outline-primary">Logout</a>
+            </li>
+            
+            {{else}}
+            <li class="nav-item">
+                <a href="/login" class="nav-link m-2 menu-item btn btn-primary">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="/register" class="nav-link m-2 menu-item btn btn-outline-primary">Join Us</a>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+    </div>
+</nav> --}}
+
+<style>
+    .loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+<header class="header_area sticky-header">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light main_box">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="/"><img src="/img/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                {{#if user}}
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item submenu dropdown active"><a class="nav-link" href="#">SALE</a></li>
+
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link" href="/category/Women">WOMEN</a>
+                                
+                            </li>
+
+                            <li class="nav-item submenu dropdown">
+                                <a href="/category/Men" class="nav-link">MEN</a>
+                               
+                            </li>
+
+
+                           <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="bi bi-person-fill"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="/user/profile">Profile</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                            
+                            <li class="nav-item"><button class="search"><span class="lnr lnr-magnifier" id="search"></span></button></li>
+                            <li class="nav-item"><a href="/cart" class="cart"><span class="bi bi-cart2"></span></a></li>
+                            {{!-- <li class="nav-item"><a href="#" class="cart"><span class="bi bi-bell"></span></a></li> --}}
+                            <div class="dropdown">
+                                <li class="nav-item" ><button type="button" onclick = "readnoti()"class="dropdown-toggle" type="button" id="notis" data-bs-toggle="dropdown" aria-expanded="false" style="background: none; color: inherit;border: none;padding: 0;font: inherit;outline: inherit;"><span class="bi bi-bell"><span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle" id="red-dot" style="margin-top:20px; margin-left:-10px; display: none">
+                                                        <span class="visually-hidden">New alerts</span>
+                                                    </span>
+                                                    </span>
+                                                    </button>
+                                            
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notis" id="list">
+                                            {{!-- <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
+                                    </ul>
+                                  </li>  
+                            </div>
+                                      
+                        </ul>
+                    </div>
+
+                {{else}}
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item submenu dropdown active"><a class="nav-link" href="#">SALE</a></li>
+
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link" href="/store">STORE</a>
+                                {{!-- <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="/category/Women/Dresses">Dresses</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/category/Women/Tops">Tops</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/category/Women/Bottoms">Bottoms</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/category/Women/Two-piece">Two-Piece</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/category/Women/others">Others</a></li>
+                                </ul> --}}
+                            </li>
+
+                            {{!-- <li class="nav-item submenu dropdown">
+                                <a href="/category/MEN" class="nav-link">MEN</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="/category/Men/Two-piece">Tops</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/category/Men/Bottoms">Bottoms</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/category/Men/Active-wear">Active Wear</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/category/Men/others">Others</a></li>
+                                </ul>
+                            </li> --}}
+
+                          
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-item"><a class="nav_login" href="/login">Login</a></li>
+                            <li class="nav-item"><a class="nav_signup" href="/register">Sign Up</a></li>
+                        </ul>
+                    </div>
+
+                {{/if}}
+            </div>
+        </nav>
+    </div>
+    <div class="search_input" id="search_input_box">
+        <div class="container">
+            <form class="d-flex justify-content-between" enctype="multipart/form-data">
+                <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+                <button type="submit" class="btn"></button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-camera" viewBox="0 0 20 20" id="camera">
+  <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
+  <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+</svg>
+                <input type="file" class="p-2 bd-highlight" accept="image/png,image/jpeg,image/jpg,image/gif" id="searchImg" style="display:none;">
+                <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+            </form>
+        </div>
+    </div>
+</header>
+<div class="loader" id="load" style="display:none"></div>
+<script>
+
+    $("#camera").click(function() {
+        $("input[id='searchImg']").click(); });
+    $.ajax({
+            type: 'POST',
+            url: '/readNoti',
+            success: function(data) {
+                document.getElementById("load").style.display = "none";
+                var count = data.length;
+                if (count == 0){
+                    document.getElementById("red-dot").style.display = "none"
+                }
+                else{
+                    document.getElementById("red-dot").style.display = "block"
+                }
+            }
+          
+    });
+    // Get the notification for database
+    function readnoti(){
+        var root = document.getElementById("list")
+        while( root.firstChild ){
+            root.removeChild( root.firstChild );
+        }
+        document.getElementById("load").style.display = "block";
+        $.ajax({
+            type: 'POST',
+            url: '/readNoti',
+            success: function(data) {
+                document.getElementById("load").style.display = "none";
+                var count = data.length;
+    
+                if (count == 0){
+                    window.location.href = 'notification';
+                    console.log("relocation");
+                }
+                else {
+                    var ul = document.getElementById("list");
+                    var li = document.createElement('li');
+                    notiElements = `<a class="dropdown-item" href="notification" style="text-align: center;text-decoration: underline;font-weight: bold;height:30px">NOTIFICATION</a>`;
+                    li.innerHTML = notiElements
+                    ul.appendChild(li);
+                    var list = []
+                    if (count > 5){
+                        for (var x = 0; x < 5;x++){
+                            var li = document.createElement('li');
+                            notiElements = `<a class="dropdown-item" white-space:normal" href="notification">` + data[x]["message"]+ `</a>`;
+                            li.innerHTML = notiElements
+                            ul.appendChild(li);
+                            list.push(data[x]["notification_id"])
+                            }
+                            var li = document.createElement('li');
+                            notiElements = `<a class="dropdown-item" href="notification" style="text-align: center;font-style: italic;font-weight: bold;height:30px;border-top: 1px solid #B6D0E2;color:#696969;">View all notification...</a>`;
+                            li.innerHTML = notiElements
+                            ul.appendChild(li);
+
+                            updatenotifirst5(list)
+                    }
+                    else {
+                        for (var x = 0; x < count;x++){
+                            notiElements += `<a class="dropdown-item" white-space:normal" href="notification">` + data[x]["message"]+ `</a>`;
+                            li.innerHTML = notiElements
+                            ul.appendChild(li);
+                            }
+                            updatenoti()
+                            document.getElementById("red-dot").style.display = "none"
+                    }
+                    
+                }
+                // If no noti, notification bell onclick will direct to notification page
+                
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown)
+                document.getElementById("load").style.display = "none";
+            }
+        });
+    }
+
+    
+    // Update notification has been read
+    function updatenoti(data){
+        jQuery.ajax({
+            type: 'POST',
+            url: '/updateNoti',
+            dataType: "json",
+            data:JSON.stringify(data),
+            contentType: "application/json"
+        });
+        // Clear the number on the notification bell
+    }
+    function updatenotifirst5(dat){
+        $.ajax({
+            type: 'POST',
+            url: '/updateNotifirst5',
+            dataType: "json",
+            data:JSON.stringify(dat),
+            contentType: "application/json"
+        });
+    }
+
+</script>

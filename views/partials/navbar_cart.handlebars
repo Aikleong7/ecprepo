@@ -1,0 +1,157 @@
+<header class="header_area" style="position: absolute; 
+    width: 100%;  
+    position: fixed;
+    top: 0px">
+
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light main_box" style="width: 100%; max-width:none;">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="/"><img src="/img/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                {{#if user}}
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item submenu dropdown active"><a class="nav-link" href="#">SALE</a></li>
+
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link" href="/category/WOMEN">WOMEN</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">Dresses</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Tops</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Bottoms</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Two-Piece</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item submenu dropdown">
+                                <a href="/category/MEN" class="nav-link">MEN</a>
+                                 <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">Tops</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Bottoms</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Active Wear</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">KIDS</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">Baby</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Toddler</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Teenager</a></li>
+                                </ul>
+                            </li>
+
+                           <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="bi bi-person-fill"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="/user/profile">Profile</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                            
+                            {{!-- <li class="nav-item"><button class="search"><span class="lnr lnr-magnifier" id="search"></span></button></li> --}}
+                            <li class="nav-item"><a href="/cart" class="cart"><span class="bi bi-cart2"></span></a></li>
+                            <li class="nav-item"><a href="#" class="cart"><span class="bi bi-bell"></span></a></li>
+
+                            {{!-- <li>
+                                <div class="dropdown drp-user">
+                                    <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="icon feather icon-settings"></i>
+                                    </a>
+                                    <div class="profile-dropdown">
+                                        <div class="pro-head">
+                                            <img src="avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+                                            <span>
+                                                User Name  
+                                            </span>
+                                            <a href="#" class="dud-logout" title="Logout">
+                                                <i class="feather icon-log-out"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="pro-body">
+                                            <li><a href="#" class="dropdown-item"><i class="feather icon-settings"></i>
+                                                Settings</a></li>
+                                            <li><a href="#" class="dropdown-item"><i class="feather icon-user"></i>
+                                                Profile</a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                <i class="feather icon-lock"></i> Logout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li> --}}
+
+
+
+                        </ul>
+                    </div>
+
+                {{else}}
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item submenu dropdown active"><a class="nav-link" href="#">SALE</a></li>
+
+                            <li class="nav-item submenu dropdown">
+                                <a class="nav-link" href="#">WOMEN</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">Dresses</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Tops</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Bottoms</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Two-Piece</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MEN</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">Tops</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Bottoms</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Active Wear</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">KIDS</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">Baby</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Toddler</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Teenager</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-item"><a class="nav_login" href="/login">Login</a></li>
+                            <li class="nav-item"><a class="nav_signup" href="/register">Sign Up</a></li>
+                        </ul>
+                    </div>
+
+                {{/if}}
+            </div>
+        </nav>
+    </div>
+    <div class="search_input" id="search_input_box">
+        <div class="container">
+            <form class="d-flex justify-content-between">
+                <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+                <button type="submit" class="btn"></button>
+                <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+            </form>
+        </div>
+    </div>
+</header>

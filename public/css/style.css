@@ -1,0 +1,113 @@
+.profilepic {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #111;
+  }
+  
+  .profilepic:hover .profilepic__content {
+    opacity: 1;
+  }
+  
+  .profilepic:hover .profilepic__image {
+    opacity: .5;
+  }
+  
+  .profilepic__image {
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+  }
+  
+  .profilepic__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+  }
+  
+  .profilepic__icon {
+    color: white;
+    padding-bottom: 8px;
+  }
+  
+  .fas {
+    font-size: 20px;
+  }
+  
+  .profilepic__text {
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 50%;
+    text-align: center;
+  }
+
+  .nav_login {
+    text-transform: uppercase;
+    /* padding: 10px 0; */
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+    color: #fff;
+    background-color: #727CF5;
+    border-color: #727CF5;
+    margin-top: 4px;
+    border: 1px solid transparent;
+    padding: 0.395rem 1.304rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+  }
+
+  .nav_login:hover {
+    color: #727CF5;
+    background-color: transparent;
+    border-color: #727CF5;
+    border: 1px solid #727CF5;
+  }
+
+  .nav_signup {
+    text-transform: uppercase;
+    /* padding: 10px 0; */
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+    color: #727CF5;
+    background-color: transparent;
+    border-color: #727CF5;
+    margin-top: 4px;
+    border: 1px solid #727CF5;
+    padding: 0.395rem 0.95rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+  }
+
+  .nav_signup:hover{
+
+    color: #fff;
+    background-color: #727CF5;
+    border-color: #727CF5;
+    border: 1px solid transparent;
+  }
+
+  .profile-dropdown{
+    padding: 0;
+    line-height: 1.4;
+    overflow: hidden;
+    position: absolute;
+    border: none;
+    margin-top: -6px;
+    min-width: 290px;
+        margin-right: -20px;
+  }

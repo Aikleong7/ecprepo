@@ -1,7 +1,3 @@
-/*
- * 'require' is similar to import used in Java and Python.
- * It brings in the libraries required to be used in this JS file.
- * */
 // const passportConfig = require("./config/passportConfig");
 // var flashMessenger =  require('flash-messenger');
 const DBConnection = require("./config/DBConnection");
@@ -15,9 +11,7 @@ const express = require("express");
 
 const { engine } = require("express-handlebars");
 // var express_handlebars_sections = require("express-handlebars-sections");
-const {
-  allowInsecurePrototypeAccess,
-} = require("@handlebars/allow-prototype-access");
+const { allowInsecurePrototypeAccess } = require("@handlebars/allow-prototype-access");
 
 const Handlebars = require("handlebars");
 const passport = require("passport");
@@ -104,7 +98,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/", require("./routes/home"));
+app.use("/", require("./routes/main"));
 // app.use('/user',        require('./routes/user'));
 // app.use('/merchant',    require('./routes/merchant'));
 // app.usse('/admin',       require('./routes/admin'));

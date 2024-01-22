@@ -13,7 +13,7 @@ router.get('/store', async (req, res) => {
 });
 
 router.get('/store/:prodID', async (req, res) => {
-    await redis.connect();
+    // await redis.connect();
     var product = await redis.get(`product:${req.params.prodID}`);
     if (!product) {
         product = await Product.findByPk(req.params.prodID);

@@ -103,7 +103,7 @@ app.use("/", require("./routes/main"));
 // app.use('/merchant',    require('./routes/merchant'));
 // app.usse('/admin',       require('./routes/admin'));
 
-const port = 5000;
+const port = 80;
 // Starts the server and listen to port
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
